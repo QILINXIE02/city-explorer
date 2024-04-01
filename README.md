@@ -36,32 +36,36 @@ ChatGPT helped me with this lab
 
 1. Name of feature: Locations
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: _30 mins____
 
-Start time: _____
+Start time: __12:50___
 
-Finish time: _____
+Finish time: _1:15pm____
 
-Actual time needed to complete: _____
+Actual time needed to complete: __25mins___
 
 
 2. Name of feature: map
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: __30 mins___
 
-Start time: _____
+Start time:  :1:15_____
 
-Finish time: _____
+Finish time: __1:50___
 
-Actual time needed to complete: _____
-Name of feature: erros
+Actual time needed to complete: _35 mins___
 
-Estimate of time needed to complete: _____
+3.Name of feature: erros
 
-Start time: _____
+Estimate of time needed to complete: __20 mins___
 
-Finish time: _____
+Start time: _1:40____
 
-Actual time needed to complete: _____
+Finish time: __1:55___
+
+Actual time needed to complete: ___15 mins__
+
+
 
 Accessibility report: 
+![alt text](image.png)
