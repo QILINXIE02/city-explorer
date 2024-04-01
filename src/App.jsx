@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Search from './Search';
 import Map from './Map';
 import Title from './Title';
+import axios, {isCancel, AxiosError} from 'axios';
 
 let accessToken = import.meta.env.VITE_LOCATION_ACCESS_TOKEN; 
 
