@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Search from './Search';
 import Map from './Map';
 import Title from './Title';
-import axios, {isCancel, AxiosError} from 'axios';
+import axios from 'axios';
 
-let accessToken = import.meta.env.VITE_LOCATION_ACCESS_TOKEN; 
+let accessToken = import.meta.env.VITE_LOCATION_ACCESS_TOKEN;
 
 function App() {
   const [city, setCity] = useState('');
@@ -14,17 +14,13 @@ function App() {
   async function getLocation() {
     let url = `https://us1.locationiq.com/v1/search?key=${accessToken}&q=${city}&format=json`;
     try {
-      let response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Unable to fetch location data');
-      }
-      let jsonData = await response.json();
-      let locationData = jsonData[0];
+      const response = await axios.get(url);
+      const locationData = response.data[0]; // Assuming the first result is the most relevant
       setLocation(locationData);
       setError(null);
-    } catch(error) {
+    } catch (error) {
       console.error("Error getting location information", error);
-      setError(error.message);
+      setError("Failed to fetch location data. Please try again.");
     }
   }
 
@@ -34,6 +30,10 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!city) {
+      setError('Please enter a city name.');
+      return;
+    }
     getLocation();
   }
 
@@ -41,7 +41,13 @@ function App() {
     <>
       <Search handleSubmit={handleSubmit} handleNewCity={handleNewCity} />
       <Title location={location} />
-      {error && <p>{error}</p>}
+      {location.lat && location.lon && (
+        <div className="location-details">
+          <p>Latitude: {location.lat}</p>
+          <p>Longitude: {location.lon}</p>
+        </div>
+      )}
+      {error && <div className="error-message">{error}</div>}
       <Map location={location} accessToken={accessToken} />
     </>
   );
