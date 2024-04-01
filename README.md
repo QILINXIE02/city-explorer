@@ -51,21 +51,20 @@ Estimate of time needed to complete: __30 mins___
 
 Start time:  :1:15_____
 
-Finish time: __1:50___
+Finish time: __2___
 
-Actual time needed to complete: _35 mins___
+Actual time needed to complete: _45 mins___
 
 3.Name of feature: erros
 
-Estimate of time needed to complete: __20 mins___
+Estimate of time needed to complete: __30 mins___
 
 Start time: _1:40____
 
-Finish time: __1:55___
+Finish time: __2:20___
 
-Actual time needed to complete: ___15 mins__
+Actual time needed to complete: ___40 mins__
 
 
 
-Accessibility report: 
-![alt text](image.png)
+Accessibility score: ![alt text](image-1.png)

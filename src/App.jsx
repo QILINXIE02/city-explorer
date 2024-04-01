@@ -3,6 +3,7 @@ import Search from './Search';
 import Map from './Map';
 import Title from './Title';
 import axios from 'axios';
+import './index.css'; // Ensure this import is correct based on your project structure
 
 let accessToken = import.meta.env.VITE_LOCATION_ACCESS_TOKEN;
 
@@ -15,11 +16,10 @@ function App() {
     let url = `https://us1.locationiq.com/v1/search?key=${accessToken}&q=${city}&format=json`;
     try {
       const response = await axios.get(url);
-      const locationData = response.data[0]; // Assuming the first result is the most relevant
+      const locationData = response.data[0];
       setLocation(locationData);
       setError(null);
     } catch (error) {
-      console.error("Error getting location information", error);
       setError("Failed to fetch location data. Please try again.");
     }
   }
@@ -38,7 +38,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="app-container">
       <Search handleSubmit={handleSubmit} handleNewCity={handleNewCity} />
       <Title location={location} />
       {location.lat && location.lon && (
@@ -47,9 +47,9 @@ function App() {
           <p>Longitude: {location.lon}</p>
         </div>
       )}
-      {error && <div className="error-message">{error}</div>}
+      {error && <div className="alert alert-danger" role="alert">{error}</div>}
       <Map location={location} accessToken={accessToken} />
-    </>
+    </div>
   );
 }
 

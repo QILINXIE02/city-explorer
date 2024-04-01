@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Search = ({ handleSubmit, handleNewCity }) => {
   return (
-    <form onSubmit={handleSubmit} className="input-group mb-3">
+    <form onSubmit={handleSubmit} className="search-form">
       <input
         type="text"
         className="form-control"
         placeholder="Type a City Name"
         onChange={handleNewCity}
       />
-      <button className="btn btn-outline-secondary" type="submit">Explore!</button>
+      <button type="submit" className="btn btn-primary">Explore!</button>
     </form>
   );
 }
