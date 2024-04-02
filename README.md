@@ -69,4 +69,4 @@ Actual time needed to complete: ___40 mins__
 
 Accessibility score: ![alt text](image-1.png)
 
-4/2/
+hi
